@@ -5,4 +5,5 @@ The algorithms are from the courses Algorithms,Part I and Algorithms,Part II of 
 ## Union-Find
 
 * Quick-Find
+* Quick-Union
 
