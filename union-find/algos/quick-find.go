@@ -1,4 +1,4 @@
-package main
+package unionfind
 
 import "fmt"
 
@@ -9,7 +9,7 @@ import "fmt"
 	* Integer array []id of length n
 	* Interpretation: p and q are connected iff(if and only if) they have the same id.
 
-			0	1	2	3	4	5	6	7	8	9			0,5 and 6 are connected
+	index	0	1	2	3	4	5	6	7	8	9			0,5 and 6 are connected
 	id[] 	0	1	1	8	8	0	0	1	8	8			1,2 and 7 are connected
 															3,4,8 and 9 are connected
 
@@ -17,13 +17,20 @@ import "fmt"
 			|		   |	 |  |
 			5--6	   7 	 8  9
 
+	Find: pa dn q are connected if the ids of p and q are same.
+
+	Union: For connecting pand q, we merge components containing p and q by changing
+	all entries whose id equals id[p] to id[q].
+
 */
-func main() {
+
+//QF is called for running the QuickFind algorithm
+func QF() {
 
 	var n int
 	//Reading the length of array from console
 	fmt.Println("Please enter the lenght of the array:")
-	_, err := fmt.Scanf("%d", &n)
+	_, err := fmt.Scan(&n)
 	if err != nil {
 		fmt.Println("Error in reading the data:", err)
 	}
@@ -44,7 +51,7 @@ func main() {
 
 }
 
-//Initaite the list of array
+//QuickFindUF initaites the list of array
 func QuickFindUF(n int) []int {
 	id := []int{}
 	for i := 0; i < n; i++ {
