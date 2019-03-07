@@ -31,6 +31,9 @@ func main() {
 	case 2:
 		fmt.Println("Running QuickUnion algo")
 		unionfind.QU()
+	case 3:
+		fmt.Println("Running Weighted QuickUnion algo")
+		unionfind.QUWG()
 	default:
 		fmt.Println("Please enter 1 or 2")
 	}
