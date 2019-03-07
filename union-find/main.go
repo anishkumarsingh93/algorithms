@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-
-	unionfind "github.com/algorithms/union-find/algos"
+	unionfind "workspace/algorithms/union-find/algos"
 )
 
 /*
@@ -18,6 +17,7 @@ func main() {
 	fmt.Println("Please select the algorithm to test:")
 	fmt.Println("1. Quick-Find")
 	fmt.Println("2. Quick-Union")
+	fmt.Println("3. Weighted Quick-Union")
 	var a int
 	_, err := fmt.Scan(&a)
 	if err != nil {
@@ -36,6 +36,6 @@ func main() {
 		fmt.Println("Running Weighted QuickUnion algo")
 		unionfind.QUWG()
 	default:
-		fmt.Println("Please enter 1 or 2")
+		fmt.Println("Please enter 1, 2 or 3")
 	}
 }

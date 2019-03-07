@@ -38,7 +38,7 @@ func QUWG() {
 
 	var n int
 	//Reading the length of array from console
-	fmt.Println("Please enter the lenght of the array:")
+	fmt.Println("Please enter the lenght of the array(>10):")
 	_, err := fmt.Scan(&n)
 	if err != nil {
 		fmt.Println("Error in reading the data:", err)
@@ -67,7 +67,7 @@ func QuickUnionUFWG(n int) ([]int, []int) {
 	sz := []int{}
 	for i := 0; i < n; i++ {
 		id = append(id, i)
-		sz[i] = 1
+		sz = append(sz, 1)
 	}
 	return id, sz
 }
@@ -96,7 +96,6 @@ func UnionQUWG(id []int, sz []int, p int, q int) ([]int, []int) {
 		id[j] = i
 		sz[i] += sz[j]
 	}
-	id[i] = j
 
 	return id, sz
 }
