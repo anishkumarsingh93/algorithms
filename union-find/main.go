@@ -19,6 +19,7 @@ func main() {
 	fmt.Println("1. Quick-Find")
 	fmt.Println("2. Quick-Union")
 	fmt.Println("3. Weighted Quick-Union")
+	fmt.Println("4. Weighted Quick-Union Path Compression")
 	var a int
 	_, err := fmt.Scan(&a)
 	if err != nil {
@@ -36,7 +37,10 @@ func main() {
 	case 3:
 		fmt.Println("Running Weighted QuickUnion algo")
 		unionfind.QUWG()
+	case 4:
+		fmt.Println("Running Weighted QuickUnion algo")
+		unionfind.QUWGPC()
 	default:
-		fmt.Println("Please enter 1, 2 or 3")
+		fmt.Println("Please enter 1, 2 3 or 4")
 	}
 }
