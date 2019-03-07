@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	unionfind "workspace/algorithms/union-find/algos"
+
+	unionfind "github.com/algorithms/union-find/algos"
 )
 
 /*
