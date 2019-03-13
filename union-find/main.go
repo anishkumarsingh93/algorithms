@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	unionfind "github.com/algorithms/union-find/algos"
+	unionfind "github.com/anishkumarsingh93/algorithms/union-find/algos"
 )
 
 /*
