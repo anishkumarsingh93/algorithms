@@ -1,5 +1,12 @@
 package stack
 
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
+
 /*
 	We use linked-list to implement stack
 
@@ -34,6 +41,47 @@ package stack
 type Node struct {
 	item string //Node is the value to be saved
 	next *Node  //This is the pointer to the next Node
+}
+
+//Client is the client code for the stack implementation
+func Client() {
+	fmt.Println("Enter the length of stack. This is only for stopping the function.")
+	var l int
+	fmt.Scan(&l)
+
+	//Declaring the first node
+	first := Node{}
+
+	fmt.Println("Enter strings to push to stack and '-' to pop the stack.")
+
+	//Procession the input
+	for i := 0; i < l; i++ {
+
+		reader := bufio.NewReader(os.Stdin)
+		str, _ := reader.ReadString('\n')
+		item := ""
+		if strings.TrimRight(str, "\n") == "-" {
+			if IsEmpty(first) {
+				fmt.Println("Cannot Pop an empty Stack")
+				return
+			}
+			first, item = Pop(first)
+			fmt.Println("Popped:", item, "Now the first is:", first)
+
+		} else {
+			fmt.Println("To be pushed:", str)
+			first = Push(str, first)
+			fmt.Println(first)
+		}
+	}
+
+	//Current Stack is
+	n := first
+	fmt.Println("********The Stack is *******", first)
+	for n.next != nil {
+		fmt.Println(n.item)
+		n = *n.next
+	}
 }
 
 //IsEmpty checks whether the stack is empty of not

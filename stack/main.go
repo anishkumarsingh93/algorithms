@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	stack "github.com/anishkumarsingh93/algorithms/stack/algos"
 )
 
 /*
@@ -28,7 +30,7 @@ func main() {
 	switch a {
 	case 1:
 		fmt.Println("Running Stack Linked-list algo")
-
+		stack.Client()
 	/*case 2:
 		fmt.Println("Running QuickUnion algo")
 		unionfind.QU()
